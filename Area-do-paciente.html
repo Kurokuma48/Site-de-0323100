@@ -12,9 +12,9 @@
         <title>Abre Alas</title>
     </head>
     <body>
-        <div id="titulo">
+        <div class="titulo">
             <img class="logo-resto" src="./Imagens/thumbnail_ABREALAS LOGO.png" alt="Logo do Abre Alas">
-            <h1 id="area-paciente">Área do paciente</h1>
+            <h1 class="area-paciente">Área do paciente</h1>
         </div>
         <div id="mapa">
             Forneça o endereço ou <br> utilize a opção "Localização atual"
@@ -30,8 +30,11 @@
                 </div>
                 <label for="ocorrencia">Informe o tipo da ocorrência:</label><br>
                 <input type="text" id="ocorrencia" name="ocorrencia" placeholder="Meu irmão desmaiou após comer um camarão, está todo vermelho mas ainda respira"><br>
-                <input  id="submiter" type="submit" value="REALIZAR CHAMADA">
             </form>
+            <button id="submiter" onclick="document.location='Area-de-espera.html'" target="_self">REALIZAR CHAMADA</button>
         </div>
+        <footer>
+            www.abrealas.com.br
+        </footer>
     </body>
 </html>
