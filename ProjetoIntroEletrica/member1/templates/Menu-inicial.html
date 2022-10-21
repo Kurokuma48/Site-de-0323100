@@ -16,8 +16,13 @@
 	    <img id="logo" src="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}" alt="Logo do Abre Alas">
         <h1>Você está acessando nosso site como:</h1>
         <div id="botoes">
-            <button class="botao" id="botao-paciente" onclick="document.location='Area-do-paciente.html'" target="_self">Paciente</button>
-            <button class="botao">Profissional</button>
+
+	<a href="{% url 'Area-do-paciente.html' %}">
+		<button class="botao" id="botao-paciente">Paciente</button>
+	</a>
+	<button class="botao">Profissional</button>
+
+
         </div>
         <footer>
             www.abrealas.com.br
