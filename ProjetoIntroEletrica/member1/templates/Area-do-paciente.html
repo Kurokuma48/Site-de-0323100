@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 
 <html>
+
+
     <head>
         <!--Aqui criamos um link para o documento que contém os estilos da página-->
 	<link rel="stylesheet" type="text/css" href="{% static 'Estilos/estilos.css' %}">
@@ -12,10 +14,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Abre Alas</title>
     </head>
+
+
+
+
     <body>
         <div class="titulo">
-		<img class="logo-resto" src="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}" alt="Logo do Abre Alas">
-            <h1 class="area-paciente">Área do paciente</h1>
+		<a href="{% url 'index.html' %}">
+			<img class="logo-resto" src="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}" alt="Logo do Abre Alas">
+		<a/>
+		<h1 class="area-paciente">Área do paciente</h1>
         </div>
         <div id="mapa">
             Forneça o endereço ou <br> utilize a opção "Localização atual"
