@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!--Aqui criamos um link para o documento que contém os estilos da página-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Estilos/estilos.css' %}">
+	<link rel="icon" type="image/x-icon" href="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}">
+        <!--Com essa tag meta o navegador entende que os caracteres são do UTF-8 e os acentos n bugam-->
+        <meta charset="UTF-8">
+        <!--Aqui o site funciona direito em celular tbm-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Abre Alas</title>
+    </head>
+    <body>
+        <div class="titulo">
+		<img class="logo-resto" src="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}" alt="Logo do Abre Alas">
+            <h1 class="area-paciente">Área do paciente</h1>
+        </div>
+        <div id="mapa">
+            Forneça o endereço ou <br> utilize a opção "Localização atual"
+        </div>
+        <div>
+            <form id="formulario">
+                Informações importantes para<br>
+                ajudarmos:<br>
+                <div id="os3-primeiros">
+                    <input type="text" class="inputs" name="telefone" placeholder="Telefone para contato: (xx) xxxxx-xxxx"><br>
+                    <input type="text" class="inputs" name="CPF" placeholder="CPF do paciente: xxx.xxx.xxx-xx"><br> 
+                    <input type="text" class="inputs" name="nome" placeholder="Nome do paciente: Fulano de Tal"><br>
+                </div>
+                <label for="ocorrencia">Informe o tipo da ocorrência:</label><br>
+                <input type="text" id="ocorrencia" name="ocorrencia" placeholder="Meu irmão desmaiou após comer um camarão, está todo vermelho mas ainda respira"><br>
+            </form>
+            <button id="submiter" onclick="document.location='Area-de-espera.html'" target="_self">REALIZAR CHAMADA</button>
+        </div>
+        <footer>
+            www.abrealas.com.br
+        </footer>
+    </body>
+</html>

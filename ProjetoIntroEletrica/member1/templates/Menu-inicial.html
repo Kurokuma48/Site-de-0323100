@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!--Aqui criamos um link para o documento que contém os estilos da página-->
+	<link rel="stylesheet" type="text/css" href="{% static 'Estilos/estilos.css' %}">
+	<link rel="icon" type="image/x-icon" href="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}">
+        <!--Com essa tag meta o navegador entende que os caracteres são do UTF-8 e os acentos n bugam-->
+        <meta charset="UTF-8">
+        <!--Aqui o site funciona direito em celular tbm-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Abre Alas</title>
+    </head>
+    <body>
+	    <img id="logo" src="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}" alt="Logo do Abre Alas">
+        <h1>Você está acessando nosso site como:</h1>
+        <div id="botoes">
+            <button class="botao" id="botao-paciente" onclick="document.location='Area-do-paciente.html'" target="_self">Paciente</button>
+            <button class="botao">Profissional</button>
+        </div>
+        <footer>
+            www.abrealas.com.br
+        </footer>
+    </body>
+</html>
