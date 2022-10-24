@@ -2,7 +2,7 @@
 ## Arquivos de front e backend do site
 
 
-A fazer (Mateus): montar DataBase e preparar area do paciente para enviar dados para ela.
+A fazer (Mateus): debuggar o form de upload de dados (área do paciente).
 
 
 *path dos HTMLs*:
