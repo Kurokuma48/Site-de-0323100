@@ -8,3 +8,4 @@ class Ocorrencia(models.Model):
     CPF = models.IntegerField(unique=True)
     nome = models.CharField(max_length=255)
     ocorrencia = models.TextField()
+    gravidade = models.IntegerField()

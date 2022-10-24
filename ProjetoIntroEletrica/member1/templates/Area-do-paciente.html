@@ -1,10 +1,9 @@
 {% load static %}
 <!DOCTYPE html>
-
 <html>
 
-
     <head>
+	   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400"> 
         <!--Aqui criamos um link para o documento que contém os estilos da página-->
 	<link rel="stylesheet" type="text/css" href="{% static 'Estilos/estilos.css' %}">
 	<link rel="icon" type="image/x-icon" href="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}">
@@ -29,7 +28,8 @@
             Forneça o endereço ou <br> utilize a opção "Localização atual"
         </div>
         <div>
-            <form id="formulario">
+            <form action="addrecord/" method="post" id="formulario">
+		    {% csrf_token %}
                 Informações importantes para<br>
                 ajudarmos:<br>
                 <div id="os3-primeiros">
@@ -42,19 +42,19 @@
 		
 		<label for="ocorrencia">Informe Gravidade (para teste)</label><br>
 
-		<input type="radio" id="MGrave" name="fav_language" value=0>
+		<input type="radio" id="MGrave" name="gravidade" value=0>
 			<label for="MGrave">Muito Grave</label><br>
-		<input type="radio" id="html" name="fav_language" value=1>
+		<input type="radio" id="Grave" name="gravidade" value=1>
 			<label for="Grave">Grave</label><br>
-		<input type="radio" id="html" name="fav_language" value=2>
+		<input type="radio" id="Moderada" name="gravidade" value=2>
 			<label for="Moderada">Moderada</label><br>
-		<input type="radio" id="html" name="fav_language" value=3>
+		<input type="radio" id="Leve" name="gravidade" value=3>
 			<label for="Leve">Leve</label><br>
 		<br>
-	    </form>
 
-            <button id="submiter" onclick="document.location='Area-de-espera.html'" target="_self">REALIZAR CHAMADA</button>
-        </div>
+            	<input type="submit" id="submiter" value="REALIZAR CHAMADA">
+	    </form>
+	</div>
         <footer>
             www.abrealas.com.br
         </footer>
