@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 from django.template import loader
+
 from .models import Ocorrencia
+from .forms import PedidoDeSocorro
 
 def index(request):
 #    template = loader.get_template('Menu-inicial.html')
@@ -16,12 +19,14 @@ def espera(request):
     return render(request, 'Area-de-espera.html')
 
 def addrecord(request):
-#    a = request.POST['local']
-    b = request.POST['telefone']
-    c = request.POST['CPF']
-    d = request.POST['nome']
-    e = request.POST['ocorrencia']
-    f = request.POST['gravidade']
-    ocorrencia = Ocorrencia(local="Av Luciano", telefone=b, CPF=c, nome=d, ocorrencia=e, gravidade=f)
-    ocorrencia.save()
-    return HttpResponseRedirect(reverse('Area-de-espera'))
+    if request.method == 'POST':
+        form = PedidoDeSocorro(request.POST)
+        if form.is_valid():
+            a = form.cleaned_data['local']
+            b = form.cleaned_data['telefone']
+            c = form.cleaned_data['nome']
+            d = form.cleaned_data['ocorrencia']
+            e = form.cleaned_data['gravidade']
+            
+            Ocorrencia(local=a, telefone=b, nome=c, ocorrencia=d, gravidade=e).save()
+            return HttpResponseRedirect(reverse('Area-de-espera'))

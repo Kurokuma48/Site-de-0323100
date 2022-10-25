@@ -33,23 +33,26 @@
                 Informações importantes para<br>
                 ajudarmos:<br>
                 <div id="os3-primeiros">
+
+                    <input type="text" class="inputs" name="local" placeholder="Local de Atendimensto: Av. X, número Y, apartamento Z"><br>
                     <input type="text" class="inputs" name="telefone" placeholder="Telefone para contato: (xx) xxxxx-xxxx"><br>
-                    <input type="text" class="inputs" name="CPF" placeholder="CPF do paciente: xxx.xxx.xxx-xx"><br> 
                     <input type="text" class="inputs" name="nome" placeholder="Nome do paciente: Fulano de Tal"><br>
                 </div>
-                <label for="ocorrencia">Informe o tipo da ocorrência:</label><br>
+                <label>Informe o tipo da ocorrência:</label><br>
                 <input type="text" id="ocorrencia" name="ocorrencia" placeholder="Meu irmão desmaiou após comer um camarão, está todo vermelho mas ainda respira"><br>
 		
-		<label for="ocorrencia">Informe Gravidade (para teste)</label><br>
-
-		<input type="radio" id="MGrave" name="gravidade" value=0>
-			<label for="MGrave">Muito Grave</label><br>
-		<input type="radio" id="Grave" name="gravidade" value=1>
-			<label for="Grave">Grave</label><br>
-		<input type="radio" id="Moderada" name="gravidade" value=2>
-			<label for="Moderada">Moderada</label><br>
-		<input type="radio" id="Leve" name="gravidade" value=3>
-			<label for="Leve">Leve</label><br>
+		<label>Informe Gravidade (para teste)</label><br>
+		
+		<div class="radio">
+			<input type="radio" id="MGrave" name="gravidade" value=0>
+				<label for="MGrave">Muito Grave</label><br>
+			<input type="radio" id="Grave" name="gravidade" value=1>
+				<label for="Grave">Grave</label><br>
+			<input type="radio" id="Moderada" name="gravidade" value=2>
+				<label for="Moderada">Moderada</label><br>
+			<input type="radio" id="Leve" name="gravidade" value=3>
+				<label for="Leve">Leve</label><br>
+		</div>
 		<br>
 
             	<input type="submit" id="submiter" value="REALIZAR CHAMADA">
