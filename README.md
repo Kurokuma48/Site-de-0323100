@@ -3,7 +3,7 @@
 
 A fazer (Luiz): alinhar o texto dos HTMLs em ```ProjetoIntroEletrica/member1/templates```.
 
-A fazer (Mateus): debuggar o form de upload de dados (área do paciente).
+A fazer (Mateus): iniciar login da ala do motorista. ver a database
 
 
 *path dos HTMLs*:
