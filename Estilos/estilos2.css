@@ -1,0 +1,27 @@
+body{
+    background-color: blue;
+    color: white;
+    font-size: 1em;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.titulo{
+    width: 1920px;
+    height: 200px;
+}
+
+.logo-resto{
+    height: 200px;
+}
+
+.area-prof{
+    height: 32px;
+    float: right;
+    width: 1000px;
+    margin: 0px;
+    margin-top: 74px;
+    margin-bottom: 94px;
+}
