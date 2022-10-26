@@ -16,24 +16,25 @@
             <img class="logo-resto" src="./Imagens/thumbnail_ABREALAS LOGO.png" alt="Logo do Abre Alas">
             <h1 class="area-paciente">Área do paciente</h1>
         </div>
-        <div>
             <div id="mapa">
                 Forneça o endereço ou <br> 
                 utilize a opção "Localização atual"
             </div>
-            <form id="formulario">
-                Informações importantes para<br>
-                ajudarmos:<br>
-                <div id="os3-primeiros">
-                    <input type="text" class="inputs" name="telefone" placeholder="Telefone para contato: (xx) xxxxx-xxxx"><br>
-                    <input type="text" class="inputs" name="CPF" placeholder="CPF do paciente: xxx.xxx.xxx-xx"><br> 
-                    <input type="text" class="inputs" name="nome" placeholder="Nome do paciente: Fulano de Tal"><br>
-                 </div>
-                <label for="ocorrencia">Informe o tipo da ocorrência:</label><br>
-                <input type="text" id="ocorrencia" name="ocorrencia" placeholder="Meu irmão desmaiou após comer um camarão, está todo vermelho mas ainda respira"><br>
-            </form>
-            <button id="submiter" onclick="document.location='Area-de-espera.html'" target="_self">REALIZAR CHAMADA</button>
-        </div>
+            <div id="bigForm">
+                <form id="formulario">
+                    Informações importantes para<br>
+                    ajudarmos:<br>
+                    <div id="os3-primeiros">
+                        <input type="text" class="inputs" name="telefone" placeholder="Telefone para contato: (xx) xxxxx-xxxx"><br>
+                        <input type="text" class="inputs" name="CPF" placeholder="CPF do paciente: xxx.xxx.xxx-xx"><br> 
+                        <input type="text" class="inputs" name="nome" placeholder="Nome do paciente: Fulano de Tal"><br>
+                    </div>
+                    <label for="ocorrencia">Informe o tipo da ocorrência:</label><br>
+                    <textarea type="text" id="ocorrencia" name="ocorrencia" placeholder="Meu irmão desmaiou após comer um camarão, está todo vermelho mas ainda respira"></textarea>
+                    <br>
+                </form>
+                <button id="submiter" onclick="document.location='Area-de-espera.html'" target="_self">REALIZAR CHAMADA</button>
+            </div>        
         <footer>
             www.abrealas.com.br
         </footer>
