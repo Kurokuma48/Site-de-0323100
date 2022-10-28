@@ -36,6 +36,15 @@ p{
     font-family: Avenir LT Std, Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#p-acompanhamento{
+    color: white;
+    text-align: center;
+    position: absolute;
+    right: 800px;
+    font-size: 1.5vw;
+    font-family: Avenir LT Std, Verdana, Geneva, Tahoma, sans-serif;
+}
+
 #logo{
     width: 24%;
     height: 15%;
