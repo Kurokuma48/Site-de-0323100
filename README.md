@@ -5,6 +5,7 @@ A fazer (Luiz): alinhar o texto dos HTMLs em ```ProjetoIntroEletrica/member1/tem
 
 A fazer (Mateus): iniciar login da ala do motorista. ver a database
 
+A fazer (Peri): Area do Profissa
 
 *path dos HTMLs*:
 ```ProjetoIntroEletrica/member1/templates```
