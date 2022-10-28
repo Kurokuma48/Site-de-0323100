@@ -168,9 +168,14 @@ h1{
     color: white;
     text-align: center;
     padding: 2%;
-    font-size: 1.7vw;
+    font-size: 1.5vw;
     float: right;
     text-align: center;
+}
+
+#submiter:hover{
+    cursor: pointer;
+    font-size: 1.8vw;
 }
 
 footer{
