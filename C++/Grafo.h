@@ -4,6 +4,7 @@ using namespace std;
 
 struct vertice{
     int ID, pai = 0;
+    double distAbs = 0;
     pair<double, double> posicao;
     unordered_map<int, double> adj;
 };
@@ -24,11 +25,12 @@ class Rede{
     //Adicona um semaforo na rede usando seu ID
         void adicionarSemaforo(int ID, double x, double y){
             //Confere se o semáforo ja existe
-            if (semaforos.find(ID) == semaforos.end()) throw new invalid_argument("semaforo ja adicionado");
+            if (!semaforos.empty() && semaforos.find(ID) != semaforos.end()) 
+                throw new invalid_argument("semaforo ja adicionado");
 
-            semaforo novo = new vertice();
-            novo->ID = ID; novo->posicao.first = x; novo->posicao.second = y;
-            semaforos[ID] = novo;
+            semaforo proximo = new vertice();
+            proximo->ID = ID; proximo->posicao.first = x; proximo->posicao.second = y;
+            semaforos[ID] = proximo;
         }
     //Adiciona uma rua na rede usando o ID de dois semaforos e o comprimento da rua
         void adiconarRua(int ID1, int ID2, double dist){
@@ -39,7 +41,7 @@ class Rede{
             semaforos[ID1]->adj[ID2] = dist;
         }
     //Retorna o tamanho da rua entre dois smaforos
-        int getTamanhoDaRua(int ID1, int ID2){
+        double getTamanhoDaRua(int ID1, int ID2){
             //Confere se os semaforos e a rua existem
             if(semaforos.find(ID1) == semaforos.end()) throw new invalid_argument("ID1 n enocntrado emm getRua");
             if(semaforos.find(ID2) == semaforos.end()) throw new invalid_argument("ID2 n encontrado em getRua");
@@ -53,33 +55,34 @@ class Rede{
             if(semaforos.find(ID1) == semaforos.end()) throw new invalid_argument("ID1 n enocntrado no A*");
             if(semaforos.find(ID2) == semaforos.end()) throw new invalid_argument("ID2 n encontrado no A*");
 
-            semaforo inicio = semaforos[ID1]; inicio->pai = 0;
+            for(auto itr = semaforos.begin(); itr != semaforos.end(); itr++){
+                itr->second->pai = 0;
+            }
+            semaforo inicio = semaforos[ID1]; inicio->pai = 0; inicio->distAbs = 0.0;
             semaforo final = semaforos[ID2];
-
-            grafo primeiro;
-            primeiro.second = inicio;
-            primeiro.first = h(ID1, ID2);
+            grafo primeiro = make_pair(h(ID1, ID2), inicio);
 
             priority_queue <grafo, vector<grafo>, greater<grafo>> minHeap;
             minHeap.push(primeiro);
-
             
-            grafo proximo =  minHeap.top();
-            minHeap.pop();
+            grafo novo = minHeap.top();
 
-            while(!minHeap.empty() && proximo.second != final){
-                for(auto itr = proximo.second->adj.begin(); itr != proximo.second->adj.end(); itr++){
-                    semaforo novo = semaforos[itr->first];
-                    novo->pai = proximo.second->ID;
-                    minHeap.push(make_pair(h(novo->ID, proximo.second->ID) + (*proximo.second->adj.find(novo->ID)).second, novo));
-                }
-                grafo proximo =  minHeap.top();
+            while(!minHeap.empty() && novo.second->ID != final->ID){
                 minHeap.pop();
+                for(auto itr = novo.second->adj.begin(); itr != novo.second->adj.end(); itr++){
+                    if(semaforos[itr->first]->pai == 0){
+                        semaforo proximo = semaforos[itr->first];
+                        proximo->pai = novo.second->ID;
+                        proximo->distAbs = novo.second->distAbs + itr->second;
+                        minHeap.push(make_pair(h(proximo->ID, final->ID) + proximo->distAbs, proximo));
+                    }
+                }
+                novo =  minHeap.top();
             }
 
             if(minHeap.empty()) cout << "Nao ha caminho" << endl;
             else{
-                semaforo caminho = proximo.second;
+                semaforo caminho = novo.second;
                 int pai = caminho->pai;
                 while(pai != 0){
                     cout << pai << endl;
