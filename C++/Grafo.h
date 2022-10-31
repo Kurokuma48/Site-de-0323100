@@ -10,11 +10,12 @@ struct vertice{
 };
 
 typedef vertice* semaforo;
-typedef pair<double, semaforo> grafo;
+typedef tuple<double, semaforo, int> grafo;
 class Rede{
     private:
         unordered_map<int, semaforo> semaforos;
         double h(int ID1, int ID2){
+            return 0;
             semaforo primeiro = semaforos[ID1];
             semaforo segundo = semaforos[ID2];
             float dx = (primeiro->posicao.first - segundo->posicao.first);
@@ -54,41 +55,62 @@ class Rede{
             //Confere se ambos os semaforos existem
             if(semaforos.find(ID1) == semaforos.end()) throw new invalid_argument("ID1 n enocntrado no A*");
             if(semaforos.find(ID2) == semaforos.end()) throw new invalid_argument("ID2 n encontrado no A*");
+            if(ID1 == ID2) {cout << ID1; return;}
 
+            //Seta todos os pais para zero
             for(auto itr = semaforos.begin(); itr != semaforos.end(); itr++){
                 itr->second->pai = 0;
+                semaforos[itr->first]->distAbs = INT_MAX;
             }
+            
+            //Recorda o ponto inicial e o final
             semaforo inicio = semaforos[ID1]; inicio->pai = 0; inicio->distAbs = 0.0;
             semaforo final = semaforos[ID2];
-            grafo primeiro = make_pair(h(ID1, ID2), inicio);
+            grafo primeiro = make_tuple(h(ID1, ID2), inicio, ID1);
 
+            //Cira o minHeap do algoritmo
             priority_queue <grafo, vector<grafo>, greater<grafo>> minHeap;
             minHeap.push(primeiro);
             
             grafo novo = minHeap.top();
 
-            while(!minHeap.empty() && novo.second->ID != final->ID){
+            //Coloca na fila os vertices até ver todos ou chegar no ultimo
+            while(!minHeap.empty() && get<1>(novo)->ID != final->ID){
                 minHeap.pop();
-                for(auto itr = novo.second->adj.begin(); itr != novo.second->adj.end(); itr++){
+                for(auto itr = get<1>(novo)->adj.begin(); itr != get<1>(novo)->adj.end(); itr++){
                     if(semaforos[itr->first]->pai == 0){
                         semaforo proximo = semaforos[itr->first];
-                        proximo->pai = novo.second->ID;
-                        proximo->distAbs = novo.second->distAbs + itr->second;
-                        minHeap.push(make_pair(h(proximo->ID, final->ID) + proximo->distAbs, proximo));
+                        if(proximo->distAbs > get<1>(novo)->distAbs + itr->second) proximo->distAbs = get<1>(novo)->distAbs + itr->second;
+//cout <<proximo->ID << " " << proximo->distAbs << endl;
+                        minHeap.push(make_tuple(h(proximo->ID, final->ID) + proximo->distAbs, proximo, get<1>(novo)->ID));
                     }
                 }
-                novo =  minHeap.top();
+                //Garante que nenhum vertice ja visto não será estragado
+                while(get<1>(minHeap.top())->pai != 0 && !minHeap.empty()){
+                    minHeap.pop();
+                }
+                //Se o ainda tem coisa no heap atualiza o novo
+                if(!minHeap.empty()){
+                    novo =  minHeap.top();
+                    get<1>(novo)->pai = get<2>(novo);    
+                }
+                
             }
+            //Arruma o primeiro
+            inicio->pai = 0;
 
-            if(minHeap.empty()) cout << "Nao ha caminho" << endl;
+            //Imprime o resultado
+            if(minHeap.empty()) cout << "Nao ha caminho";
             else{
-                semaforo caminho = novo.second;
+                cout << final->ID;
+                semaforo caminho = get<1>(novo);
                 int pai = caminho->pai;
                 while(pai != 0){
-                    cout << pai << endl;
+                    cout << " <- " << pai;
                     caminho = semaforos[pai];
                     pai = caminho->pai;
                 }
+                cout << endl;
             }
         }
 };
