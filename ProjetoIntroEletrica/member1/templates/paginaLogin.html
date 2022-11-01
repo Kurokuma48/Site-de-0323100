@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCKTYPE html>
+<html>
+	<head>
+	    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400">
+        <!--Aqui criamos um link para o documento que contém os estilos da página-->
+        
+		<!--
+		<link rel="stylesheet" type="text/css" href="{% static 'Estilos/estilos.css' %}">
+		<link rel="icon" type="image/x-icon" href="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}">
+		-->
+
+        <!--Com essa tag meta o navegador entende que os caracteres são do UTF-8 e os acentos n bugam-->
+        <meta charset="UTF-8">
+        <!--Aqui o site funciona direito em celular tbm-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Abre Alas</title>
+	</head>
+
+
+	<body>
+		<a href={% url 'index.html' %}>
+			<img class="logo-resto" src="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}" alt="Logo do Abre Alas">
+		</a>
+		<h1>Área do Profissional</h1>
+		<form action="tentarLogin/" method="post" id="formulario">
+		{% csrf_token %}
+			<p>Login:</p>
+				<input type="text" class="inputs" name="Login" placeholder="Identificador de Profissional"><br>
+			<p>Senha:</p>
+				<input type="text" class="inputs" name="Senha" placeholder="Senha">
+				<br>
+			<input type="submit" id="submiter" value="Autenticar">
+				<br>
+		</form>	
+
+
+	</body>
+</html>

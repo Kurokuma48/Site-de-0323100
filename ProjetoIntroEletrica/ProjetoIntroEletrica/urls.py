@@ -19,4 +19,5 @@ from django.urls import include, path
 urlpatterns = [
     path('', include('member1.urls')), # ' ' é o nome do diretorio
     path('admin/', admin.site.urls),
+	path('accounts/', include('django.contrib.auth.urls')),
 ]

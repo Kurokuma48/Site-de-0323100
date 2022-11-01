@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCKTYPE html>
+<html>
+	<head>
+        <link rel="stylesheet" type="text/css" href="{% static 'Estilos/estilos.css'%}">
+        <link rel="icon" type="image/x-icon" href="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Abre Alas</title>
+
+	</head>
+	<body>
+		<a href="{% url 'index.html'%}">
+            <img class="logo-resto" src="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}" alt="Logo do Abre Alas">
+        </a>
+{% if user.is_authenticated %}
+
+		<h2>Olá {{ user.get_username }}</h2>
+		<h3>A seguir está a próxima ocorrência:<h3>
+		<br><br>
+		<table border="1">
+			
+			<tr>
+				<td>Local</td>
+				<td>Gravidade</td>
+				<td>Telefone</td>
+				<td>Ocorrencia</td>
+				<td></td>
+			</tr>
+			{% for x in ocorrencias %}
+			<tr>
+			<td>{{ x.local }}</td>
+			<td>{{ x.gravidade }}</td>
+			<td>{{ x.telefone }}</td>
+			<td>{{ x.ocorrencia}}</td>
+			<td><a href="Aceitar/{{ x.id }}">Aceitar</a></td>
+			</tr>
+			{% endfor %}
+</table>
+
+<footer>
+     <li><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a></li></footer>
+
+	
+
+
+{% else %}
+
+<h1>VOCÊ NÃO ESTÁ LOGADO!!!</h1>
+
+<a href={% url 'login' %}><h1>LOGUE-SE</h1></a>
+
+{% endif %}
+
+
+
+	</body>
+
+
+</html>

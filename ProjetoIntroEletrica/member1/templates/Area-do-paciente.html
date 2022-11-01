@@ -18,23 +18,21 @@
 
 
     <body>
-        <div class="titulo">
-		<a href="{% url 'index.html' %}">
+
+		<a href={% url 'index.html' %}>
 			<img class="logo-resto" src="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}" alt="Logo do Abre Alas">
 		<a/>
+
+        </div>
+        <div class="titulo">
 		<h1 class="area-paciente">Área do paciente</h1>
-        </div>
-        <div id="mapa">
-            Forneça o endereço ou <br> utilize a opção "Localização atual"
-        </div>
-        <div>
-            <form action="addrecord/" method="post" id="formulario">
+	        <form action="addrecord/" method="post" id="formulario">
 		    {% csrf_token %}
                 Informações importantes para<br>
                 ajudarmos:<br>
                 <div id="os3-primeiros">
 
-                    <input type="text" class="inputs" name="local" placeholder="Local de Atendimensto: Av. X, número Y, apartamento Z"><br>
+                    <input type="text" class="inputs" name="local" placeholder="Local de Atendendimento: id"><br>
                     <input type="text" class="inputs" name="telefone" placeholder="Telefone para contato: (xx) xxxxx-xxxx"><br>
                     <input type="text" class="inputs" name="nome" placeholder="Nome do paciente: Fulano de Tal"><br>
                 </div>
