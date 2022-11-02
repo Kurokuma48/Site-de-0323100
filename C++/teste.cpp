@@ -4,151 +4,166 @@
 using namespace std;
 
 int main(){
-    Rede teste;
+    Rede CUASO;
     try{
-	 Rede.adicionarSemaforo(1 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(2 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(3 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(4 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(5 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(6 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(7 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(8 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(9 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(10 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(11 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(12 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(13 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(14 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(15 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(16 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(17 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(18 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(19 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(20 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(21 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(22 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(23 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(24 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(25 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(26 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(27 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(28 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(29 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(30 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(31 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(32 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(33 , 0.0, 0.0)
-	 Rede.adicionarSemaforo(34 , 0.0, 0.0)
+	 CUASO.adicionarSemaforo(1 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(2 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(3 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(4 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(5 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(6 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(7 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(8 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(9 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(10 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(11 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(12 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(13 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(14 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(15 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(16 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(17 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(18 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(19 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(20 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(21 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(22 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(23 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(24 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(25 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(26 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(27 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(28 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(29 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(30 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(31 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(32 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(33 , 0.0, 0.0);
+	 CUASO.adicionarSemaforo(34 , 0.0, 0.0);
 
 //   teste.adiconarRua(1, 2, 5.0);
 
-	Rede.adicionarRua(1, 2, )
-	Rede.adicionarRua(2, 1, )
+	CUASO.adicionarRua(1, 2, 460.0);
+	CUASO.adicionarRua(2, 1, 460.0);
 
-	Rede.adicionarRua(2, 3, )
-	Rede.adicionarRua(3, 2, )
+	CUASO.adicionarRua(2, 3, 325.0);
+	CUASO.adicionarRua(3, 2, 325.0);
 
-	Rede.adicionarRua(3, 4, )
-	Rede.adicionarRua(4, 3, )
+	CUASO.adicionarRua(3, 4, 500.0);
+	CUASO.adicionarRua(4, 3, 500.0);
 
-	Rede.adicionarRua(4, 5, )
-	Rede.adicionarRua(5, 4, )
+	CUASO.adicionarRua(4, 5, 900.0);
+	CUASO.adicionarRua(5, 4, 900.0);
 
-	Rede.adicionarRua(5, 6, )
-	Rede.adicionarRua(6, 5, )
+	CUASO.adicionarRua(5, 6, 350.0);
+	CUASO.adicionarRua(6, 5, 350.0);
 
-	Rede.adicionarRua(6, 7, )
-	Rede.adicionarRua(7, 6, )
+	CUASO.adicionarRua(6, 7, 350.0);
+	CUASO.adicionarRua(7, 6, 350.0);
 
-	Rede.adicionarRua(7, 8, )
-	Rede.adicionarRua(8, 7, )
+	CUASO.adicionarRua(7, 8, 200.0);
+	CUASO.adicionarRua(8, 7, 200.0)
 
-	Rede.adicionarRua(8, 9, )
-	Rede.adicionarRua(9, 8, )
+	CUASO.adicionarRua(8, 9, 380.0);
+	CUASO.adicionarRua(9, 8, 380.0);
 
-	Rede.adicionarRua(9, 10, )
-	Rede.adicionarRua(10, 9, )
+	CUASO.adicionarRua(9, 10, 90.0);
+	CUASO.adicionarRua(10, 9, 90.0);
 
-	Rede.adicionarRua(10, 11, )
-	Rede.adicionarRua(11, 10, )
+	CUASO.adicionarRua(10, 11, 400.0);
+	CUASO.adicionarRua(11, 10, 400.0);
 
-	Rede.adicionarRua(11, 12, )
-	Rede.adicionarRua(12, 11, )
+	CUASO.adicionarRua(11, 12, 230.0);
+	CUASO.adicionarRua(12, 11, 230.0);
 
-	Rede.adicionarRua(12, 13, )
-	Rede.adicionarRua(13, 12, )
+	CUASO.adicionarRua(12, 13, 240.0);
+	CUASO.adicionarRua(13, 12, 240.0);
 
-	Rede.adicionarRua(13, 14, )
-	Rede.adicionarRua(14, 13, )
+	CUASO.adicionarRua(13, 14, 705.0);
+	CUASO.adicionarRua(14, 13, 705.0);
 
-	Rede.adicionarRua(14, 15, )
-	Rede.adicionarRua(15, 14, )
+	CUASO.adicionarRua(14, 15, 90.0);
+	CUASO.adicionarRua(15, 14, 90.0);
 
-	Rede.adicionarRua(15, 16, )
-	Rede.adicionarRua(16, 15, )
+	CUASO.adicionarRua(15, 16, 195.0);
+	CUASO.adicionarRua(16, 15, 195.0);
 
-	Rede.adicionarRua(16, 17, )
-	Rede.adicionarRua(17, 16, )
+	CUASO.adicionarRua(16, 17, 850.0);
+	CUASO.adicionarRua(17, 16, 850.0);
 
-	Rede.adicionarRua(17, 18, )
-	Rede.adicionarRua(18, 17, )
+	CUASO.adicionarRua(17, 18, 76.0);
+	CUASO.adicionarRua(18, 17, 76.0);
 
-	Rede.adicionarRua(18, 19, )
-	Rede.adicionarRua(19, 18, )
+	CUASO.adicionarRua(18, 19, 450.0);
+	CUASO.adicionarRua(19, 18, 450.0);
 
-	Rede.adicionarRua(19, 20, )
-	Rede.adicionarRua(20, 19, )
+	CUASO.adicionarRua(19, 20, 135.0);
+	CUASO.adicionarRua(20, 19, 135.0);
 
-	Rede.adicionarRua(20, 21, )
-	Rede.adicionarRua(21, 20, )
+	CUASO.adicionarRua(20, 21, 112.0);
+	CUASO.adicionarRua(21, 20, 112.0);
 
-	Rede.adicionarRua(21, 22, )
-	Rede.adicionarRua(22, 21, )
+	CUASO.adicionarRua(21, 22, 145.0);
+	CUASO.adicionarRua(22, 21, 145.0);
 
-	Rede.adicionarRua(22, 23, )
-	Rede.adicionarRua(23, 22, )
+	CUASO.adicionarRua(22, 23, 135.0);
+	CUASO.adicionarRua(23, 22, 135.0);
 
-	Rede.adicionarRua(23, 24, )
-	Rede.adicionarRua(24, 23, )
+	CUASO.adicionarRua(23, 24, 400.0);
+	CUASO.adicionarRua(24, 23, 400.0);
 
-	Rede.adicionarRua(24, 25, )
-	Rede.adicionarRua(25, 24, )
+	CUASO.adicionarRua(24, 1, 650.0);
+	CUASO.adicionarRua(1, 24, 650.0);
 
-	Rede.adicionarRua(25, 26, )
-	Rede.adicionarRua(26, 25, )
+	CUASO.adicionarRua(23, 25, 251.0);
+	CUASO.adicionarRua(25, 23, 251.0);
 
-	Rede.adicionarRua(26, 27, )
-	Rede.adicionarRua(27, 26, )
+	CUASO.adicionarRua(25, 26, 145.0);
+	CUASO.adicionarRua(26, 25, 145.0);
 
-	Rede.adicionarRua(27, 28, )
-	Rede.adicionarRua(28, 27, )
+	CUASO.adicionarRua(26, 27, 150.0);
+	CUASO.adicionarRua(27, 26, 150.0);
 
-	Rede.adicionarRua(28, 29, )
-	Rede.adicionarRua(29, 28, )
+	CUASO.adicionarRua(27, 28, 145.0);
+	CUASO.adicionarRua(28, 27, 145.0);
 
-	Rede.adicionarRua(29, 30, )
-	Rede.adicionarRua(30, 29, )
+	CUASO.adicionarRua(28, 29, 250.0);
+	CUASO.adicionarRua(29, 28, 250.0);
 
-	Rede.adicionarRua(30, 31, )
-	Rede.adicionarRua(31, 30, )
+	CUASO.adicionarRua(29, 30, 320.0);
+	CUASO.adicionarRua(30, 29, 320.0);
 
-	Rede.adicionarRua(31, 32, )
-	Rede.adicionarRua(32, 31, )
-
-	Rede.adicionarRua(32, 33, )
-	Rede.adicionarRua(33, 32, )
-
-	Rede.adicionarRua(33, 34, )
-	Rede.adicionarRua(34, 33, )
-
-	Rede.adicionarRua(34, 1, )
-	Rede.adicionarRua(1, 34, )
+	CUASO.adicionarRua(30, 31, 150.0);
+	CUASO.adicionarRua(31, 30, 150.0);
 
 
+	CUASO.adicionarRua(31, 10, 84.0);
+	CUASO.adicionarRua(10, 31, 84.0);
 
 
-        teste.getMenorCaminho(3, 7);
+	CUASO.adicionarRua(6, 32, 300.0);
+	CUASO.adicionarRua(32, 6, 300.0);
+
+	CUASO.adicionarRua(32, 28, 300.0);
+	CUASO.adicionarRua(28, 32, 300.0);
+
+
+	CUASO.adicionarRua(18, 33, 560.0);
+	CUASO.adicionarRua(33, 18, 560.0);
+
+	CUASO.adicionarRua(33, 34, 560.0);
+	CUASO.adicionarRua(34, 33, 560.0);
+
+	CUASO.adicionarRua(34, 11, 584.0);
+	CUASO.adicionarRua(11, 34, 584.0);
+
+	CUASO.adicionarRua(34, 30, 325.0);
+	CUASO.adicionarRua(30, 34, 325.0);
+
+
+
+
+        CUASO.getMenorCaminho(3, 14);
     }
     catch(invalid_argument* e){
         cout << e->what() << endl;
