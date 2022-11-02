@@ -102,15 +102,23 @@ class Rede{
             //Imprime o resultado
             if(minHeap.empty()) cout << "Nao ha caminho";
             else{
-                cout << final->ID;
+                stack<int> pilha;
+                pilha.push(final->ID);
                 semaforo caminho = get<1>(novo);
                 int pai = caminho->pai;
                 while(pai != 0){
-                    cout << " <- " << pai;
+                    pilha.push(pai);
                     caminho = semaforos[pai];
                     pai = caminho->pai;
+                }                
+                ofstream output;
+                output.open("caminho.csv");
+                output << pilha.top();
+                pilha.pop();
+                while(!pilha.empty()){
+                    output << "," << pilha.top(); 
+                    pilha.pop();
                 }
-                cout << endl;
             }
         }
 };
