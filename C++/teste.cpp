@@ -41,7 +41,7 @@ int main(){
         teste.adiconarRua(10, 2, 3.0);
         teste.adiconarRua(10, 6, 3.0);
 
-        teste.getMenorCaminho(3, 7);
+        teste.getMenorCaminho(4, 6);
     }
     catch(invalid_argument* e){
         cout << e->what() << endl;
