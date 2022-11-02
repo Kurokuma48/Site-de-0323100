@@ -3,7 +3,7 @@
 
 A fazer (Peri + Pedro Reis): alinhar o texto dos HTMLs em ```ProjetoIntroEletrica/member1/templates```.
 
-A fazer (Mateus): debuggar form e terminar pagina do profissional
+A fazer (Mateus): terminar pagina do profissional
 
 A fazer (Peri): Area do Profissa
 
