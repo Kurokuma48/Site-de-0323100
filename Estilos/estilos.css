@@ -52,8 +52,9 @@ p{
     color: white;
     text-align: center;
     position: absolute;
-    right: 800px;
-    font-size: 1.5vw;
+    right: 525px;
+    top: 50px;
+    font-size: 3vw;
     font-family: Avenir LT Std, Verdana, Geneva, Tahoma, sans-serif;
 }
 

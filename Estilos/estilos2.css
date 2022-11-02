@@ -40,8 +40,9 @@ h1{
     padding: 5%;
     height: 100 px;
     text-align: left;
-    left: -30px;
+    left: -200px;
     margin: 0px;
+    top: -50px;
     height: 20%;
     float: right;
     font-size: 2.5vw;
@@ -52,10 +53,10 @@ h1{
 }
 
 #bigForm{
-    height: 79%;
+    height: 60%;
     position: relative;
-    top: 70px;
-    right: 834px;
+    top: -10px;
+    right: 550px;
     width: 30%;
     float: right;
     margin-right: 20%;
@@ -63,7 +64,7 @@ h1{
 
 #unidades{
     width: 98%;
-    height: 200px;
+    height: 150px;
     border-style: none;
     border-radius: 10px;
     margin-top: 1%;
@@ -93,6 +94,9 @@ h1{
 #cadastro{
     float: left;
     margin-left: 15%;
+    position: relative;
+    top: -15px;
+    left: 120px;
     text-align: center;
     font-size: 1.2vw;
     font-family: Avenir LT Std, Verdana, Geneva, Tahoma, sans-serif;
@@ -101,7 +105,7 @@ h1{
 #ou{
     position: relative;
     right: -540px;
-    bottom: 630px;
+    bottom: 34px;
     float: center;
     text-align:center;
     font-size: 1.2vw;
@@ -110,16 +114,15 @@ h1{
 
 #login{
     position: absolute;
-    right: -890px;
-    bottom: 780px;
-    float: center;
+    right: -500px;
+    bottom: 620px;
     text-align:center;
     font-size: 1.2vw;
     font-family: Avenir LT Std, Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #bigForm2{
-    height: 79%;
+    height: 70%;
     position: relative;
     top: 70px;
     right: 834px;
@@ -131,7 +134,7 @@ h1{
 #formulario2{
     float: right;
     width: 100%;
-    height: 100%;
+    height: 80%;
     text-align: center;
     font-size: 2vw;
     font-family: Avenir LT Std, Verdana, Geneva, Tahoma, sans-serif;
@@ -143,10 +146,10 @@ h1{
 
 .inputs2{
     position: relative;
-    right: -1100px;
-    bottom: 540px;
-    width: 90%;
-    height: 10%;
+    right: -700px;
+    bottom: 450px;
+    width: 80%;
+    height: 5%;
     border-style: none;
     border-radius: 10px;
     margin-top: 3%;
@@ -156,8 +159,8 @@ h1{
 
 #submiter{
     position: absolute;
-    left: 1200px;
-    bottom:300px;
+    left: 750px;
+    bottom: 200px;
     width: 70%;
     height: 150px;
     border-style: solid;
