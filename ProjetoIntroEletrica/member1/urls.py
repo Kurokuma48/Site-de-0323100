@@ -10,5 +10,5 @@ urlpatterns = [
 #	path('pagina-login', views.paginaLogin, name='pagina-login'),
 #	path('tentarLogin/', views.tentarLogin, name='tentarLogin'),
 	path('Area-do-Profissional', views.paginaProfissional, name='Area-do-Profissional'),
-	path('Aceitar/<int:id>', views.aceitarPedido, name='Aceitar'),
+	path('Aceitar/<int:ID>', views.aceitarPedido, name='Aceitar'),
 ]

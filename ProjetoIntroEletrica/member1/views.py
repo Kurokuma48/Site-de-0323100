@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.template import loader
-from ctypes import *
+import ctypes
+import numpy as np
+import os
 
 from .models import Ocorrencia
 from .forms import PedidoDeSocorro
@@ -50,8 +52,29 @@ def paginaProfissional(request):
 	}
 	return HttpResponse(template.render(context, request))
 
-def aceitarPedido(request, id):
-	ocorrenciaAtual = Ocorrencia.objects.get(id=id)
-#	path0 = trace(c_int(ocorrenciaAtual.values().local))
+
+
+def aceitarPedido(request, ID):
+
+	ocorrenciaAtual = get_object_or_404(Ocorrencia, id=ID)
+
+#modificar ao usar em outra maquina
+	filepath = os.path.join(os.path.dirname(__file__), 'locallibs', 'biblioteca.so')
+	lib = ctypes.CDLL(filepath)
+
+#	pegar o caminho do nó 14 (Hospital Universitario) ao local inicial (OBS: caminho de ida = caminho de volta). RETORNA EM ProjetoIntroeletrica/caminho.csv
+
+	lib.tracarRota(ctypes.c_int(ocorrenciaAtual.local))
+	
+#	vetor = np.loadtext('caminho.csv', delimiter=',', dtype=int)
+
+
+# Mandar o sinal para os arduinos (na cuaso não há cruzamentos)
+
+#(o esp tem que voltar ao normal dps que a ambulância passar duas vezes)
+
+# Dar display no caminho
+
+
 	ocorrenciaAtual.delete()
 	return HttpResponseRedirect(reverse('Area-do-Profissional'))
