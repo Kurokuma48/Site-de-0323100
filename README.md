@@ -4,7 +4,7 @@
 A fazer (Peri + Pedro Reis): alinhar o texto dos HTMLs em ```ProjetoIntroEletrica/member1/templates```.
 
 A fazer (Mateus): terminar pagina do profissional
-  - Mudar o path ou fazer o python acessar o ```ProjetoIntroEletrica/caminho.csv```
+  - Mudar o path ou fazer o python acessar direito o ```ProjetoIntroEletrica/caminho.csv```
   - Fazer comunicacao com o esp
   - interface do pedido aceito
 
