@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.template import loader
 import ctypes
-import numpy as np
+from numpy import genfromtxt, flip
 import os
 
 from .models import Ocorrencia
@@ -25,6 +25,8 @@ def paginaLogin(request):
     template = loader.get_template('paginaLogin.html')
     return HttpResponse(template.render({}, request))
 
+##################################################
+
 def addrecord(request):
 	if request.method == 'POST':
 		form = PedidoDeSocorro(request.POST)
@@ -34,15 +36,17 @@ def addrecord(request):
 			c = form.cleaned_data['nome']
 			d = form.cleaned_data['ocorrencia']
 			e = form.cleaned_data['gravidade']
-            
-			Ocorrencia(local=a, telefone=b, nome=c, ocorrencia=d, gravidade=e).save()
+
+
+			Ocorrencia(local=a, telefone=b, nome=c, ocorrencia=d, gravidade=e, aceito="N").save()
+#			Ocorrencia(local=a, telefone=b, nome=c, ocorrencia=d, gravidade=e).save()
 			return HttpResponseRedirect(reverse('Area-de-espera'))
 		else:
 			return HttpResponseRedirect(reverse('Area-do-paciente'))
 	else:
 		return HttpResponseRedirect(reverse('Area-do-paciente'))
 
-
+##################################################
 
 def paginaProfissional(request): 
 	ocorrencias = Ocorrencia.objects.all().order_by('gravidade').values()
@@ -52,13 +56,12 @@ def paginaProfissional(request):
 	}
 	return HttpResponse(template.render(context, request))
 
-
+##################################################
 
 def aceitarPedido(request, ID):
 
 	ocorrenciaAtual = get_object_or_404(Ocorrencia, id=ID)
 
-#modificar ao usar em outra maquina
 	filepath = os.path.join(os.path.dirname(__file__), 'locallibs', 'biblioteca.so')
 	lib = ctypes.CDLL(filepath)
 
@@ -66,7 +69,9 @@ def aceitarPedido(request, ID):
 
 	lib.tracarRota(ctypes.c_int(ocorrenciaAtual.local))
 	
-#	vetor = np.loadtext('caminho.csv', delimiter=',', dtype=int)
+	filepath2 = os.path.join(os.path.dirname(__file__), "..", "caminho.csv")
+	vetor = genfromtxt(filepath2, delimiter=',')
+	print(vetor)	
 
 
 # Mandar o sinal para os arduinos (na cuaso não há cruzamentos)
@@ -75,6 +80,27 @@ def aceitarPedido(request, ID):
 
 # Dar display no caminho
 
+	template = loader.get_template('caminhoDaAmbulancia.html')
+	context = {
+		'ID' : ID,
+		'x' : ocorrenciaAtual,
+		'vetor' : vetor,
+		'vetorF' : flip(vetor)
+	}
 
-	ocorrenciaAtual.delete()
+#	ocorrenciaAtual.delete()
+	ocorrenciaAtual.aceito = 'S'
+	ocorrenciaAtual.save()
+
+	return HttpResponse(template.render(context, request))
+#	return HttpResponseRedirect(reverse('Area-do-Profissional'))
+
+#########################################
+
+def delete(request, ID):
+	get_object_or_404(Ocorrencia, id=ID).delete()
 	return HttpResponseRedirect(reverse('Area-do-Profissional'))
+
+def csv(request):
+	content = open(os.path.join(os.path.dirname(__file__), "..", "caminho.csv")).read()
+	return HttpResponse(content, content_type='text/plain')

@@ -17,22 +17,32 @@
 
 		<h2>Olá {{ user.get_username }}</h2>
 		<h3>A seguir está a próxima ocorrência:<h3>
+		<a href="{% url 'Area-do-Profissional' %}">
+			<button class="botao">REFRESH</button>
+		</a>
 		<br><br>
 		<table border="1">
 			
 			<tr>
-				<td>Local</td>
-				<td>Gravidade</td>
-				<td>Telefone</td>
-				<td>Ocorrencia</td>
+				<td> Local </td>
+				<td> Gravidade </td>
+				<td> Telefone </td>
+				<td> Nome do Paciente </td>
+				<td> Ocorrencia </td>
+				<td> Aceita? </td>
 				<td></td>
 			</tr>
 			{% for x in ocorrencias %}
 			<tr>
 			<td>{{ x.local }}</td>
-			<td>{{ x.gravidade }}</td>
+			{% if x.gravidade == 0 %}<td> Muito Grave </td>{% endif %}
+			{% if x.gravidade == 1 %}<td> Grave </td>{% endif %}
+			{% if x.gravidade == 2 %}<td> Moderada </td>{% endif %}
+			{% if x.gravidade == 3 %}<td> Leve </td>{% endif %}
 			<td>{{ x.telefone }}</td>
+			<td>{{ x.nome }}</td>
 			<td>{{ x.ocorrencia}}</td>
+			<td>{{ x.aceito }}</td>
 			<td><a href="Aceitar/{{ x.id }}">Aceitar</a></td>
 			</tr>
 			{% endfor %}

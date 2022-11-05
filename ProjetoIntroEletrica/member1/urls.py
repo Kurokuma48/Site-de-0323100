@@ -7,8 +7,8 @@ urlpatterns = [
     path('Area-do-paciente', views.paciente, name='Area-do-paciente'),
     path('Area-de-espera', views.espera, name='Area-de-espera'),
     path('addrecord/', views.addrecord, name='addrecord'),
-#	path('pagina-login', views.paginaLogin, name='pagina-login'),
-#	path('tentarLogin/', views.tentarLogin, name='tentarLogin'),
 	path('Area-do-Profissional', views.paginaProfissional, name='Area-do-Profissional'),
-	path('Aceitar/<int:ID>', views.aceitarPedido, name='Aceitar'),
+	path('Aceitar/<int:ID>', views.aceitarPedido, name='Aceitar'),	
+	path('delete/<int:ID>', views.delete, name='delete'),
+	path('caminho.csv', views.csv, name='caminho.csv'),
 ]

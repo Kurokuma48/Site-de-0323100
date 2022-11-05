@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+        <head>
+		    <link rel="stylesheet" type="text/css" href="{% static 'Estilos/estilos.css'%}">
+			<link rel="icon" type="image/x-icon" href="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}">
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Abre Alas</title>
+        </head>
+
+        <body>
+            <a href="{% url 'index.html'%}">
+				<img class="logo-resto" src="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}" alt="Logo do Abre Alas">
+			</a>
+
+{% if user.is_authenticated %}
+
+		<h2>Olá {{ user.get_username }}</h2>
+		<br><h2>Ocorrência Atual:</h2>
+		<br>
+			<p>
+			Gravidade:  {% if x.gravidade == 0 %}<td> Muito Grave </td>{% endif %}
+                        {% if x.gravidade == 1 %}<td> Grave </td>{% endif %}
+                        {% if x.gravidade == 2 %}<td> Moderada </td>{% endif %}
+                        {% if x.gravidade == 3 %}<td> Leve </td>{% endif %}
+			<br>
+			Ocorrencia: {{ x.ocorrencia }}<br>
+			Telefone: {{ x.telefone }}<br>
+			Nome do Paciente: {{ x.nome }}
+			
+			</p>
+		<br>
+
+		<h3>Caminho a ser seguido</h3>
+
+		<h3>Ida:</h3>
+        <table border="1">
+		<tr>
+		{% for v in vetorF %}
+			<td>{{ v }}</td>
+		{% endfor %}
+		</tr>
+		</table>
+
+		<h3>Volta:</h3>
+        <table border="1">
+		<tr>
+		{% for v in vetor %}
+			<td>{{ v }}</td>
+		{% endfor %}
+		</tr>
+		</table>
+	
+		<br><br><br>
+		<a href="/delete/{{ ID }}">
+			<button class="botao">Atendimento Concluido</button>
+		</a>
+
+{% else %}
+
+<h1>VOCÊ NÃO ESTÁ LOGADO!!!</h1>
+<a href={% url 'login' %}><h1>LOGUE-SE</h1></a>
+
+{% endif %}
+
+		</body>
+
+</html>
+
