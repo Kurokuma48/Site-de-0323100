@@ -15,3 +15,5 @@ O mesmo software também está subscrito nos tópicos Tx (carinhosamente apelida
 enviam os sinais de "Conectado com sucesso" e "Ambulancia ja passou";
 
 O backup das nodes parciais ainda não finalizadas se enontram no arquivo JSON;
+
+https://www.youtube.com/watch?v=e99M6-7KW0k
