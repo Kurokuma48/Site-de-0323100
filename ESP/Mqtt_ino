@@ -2,8 +2,8 @@
 #include <PubSubClient.h>
 
 //Atualize esses valores para de adaptar a sua rede WiFi
-const char* ssid = "AshesToAshes"; //Moto One Vision
-const char* password = "Vidval118"; //VanessaPerfeita
+const char* ssid = "Moto One Vision";
+const char* password = "VanessaPerfeita";
 const char* mqtt_server = "broker.mqttdashboard.com";
 #define mqtt_port         1883
 #define MQTT_USER         ""
