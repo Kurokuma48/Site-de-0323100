@@ -1,0 +1,538 @@
+[
+    {
+        "id": "c7b6724c.73857",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "2c6f66c8.a983fa",
+        "type": "mqtt in",
+        "z": "c7b6724c.73857",
+        "name": "ESP-01",
+        "topic": "/Calaza/Tx",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "a2e9da3e.eada78",
+        "x": 70,
+        "y": 300,
+        "wires": [
+            [
+                "1c694184.80e3ee",
+                "3f9b5c64.ba0b54"
+            ]
+        ]
+    },
+    {
+        "id": "72a2e267.af09cc",
+        "type": "mqtt out",
+        "z": "c7b6724c.73857",
+        "name": "ESP-01",
+        "topic": "/Calaza/Rx",
+        "qos": "",
+        "retain": "",
+        "broker": "a2e9da3e.eada78",
+        "x": 840,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "69de4cf6.8fdbd4",
+        "type": "switch",
+        "z": "c7b6724c.73857",
+        "name": "controle 01",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "else"
+            },
+            {
+                "t": "cont",
+                "v": "ESP-01-esquerda",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "ESP-01-direita",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": true,
+        "outputs": 3,
+        "x": 450,
+        "y": 80,
+        "wires": [
+            [
+                "7ee002ab.3d660c"
+            ],
+            [
+                "3a9d8e87.d02952"
+            ],
+            [
+                "89295e47.59cda"
+            ]
+        ]
+    },
+    {
+        "id": "4aa87595.56137c",
+        "type": "inject",
+        "z": "c7b6724c.73857",
+        "name": "Arquivo local",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "ESP-1-direita, ESP-01-esquerda",
+        "payloadType": "str",
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "69de4cf6.8fdbd4",
+                "16d9a349.25877d",
+                "f74787f6.7a09b8"
+            ]
+        ]
+    },
+    {
+        "id": "cb40249d.4ab698",
+        "type": "mqtt in",
+        "z": "c7b6724c.73857",
+        "name": "ESP-02",
+        "topic": "/Calaza2/Tx",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "a2e9da3e.eada78",
+        "x": 70,
+        "y": 360,
+        "wires": [
+            [
+                "1c694184.80e3ee",
+                "eb3c734e.faf0d"
+            ]
+        ]
+    },
+    {
+        "id": "1c694184.80e3ee",
+        "type": "debug",
+        "z": "c7b6724c.73857",
+        "name": "esp's in",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 240,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "d5815805.7b2bb8",
+        "type": "mqtt out",
+        "z": "c7b6724c.73857",
+        "name": "ESP-02",
+        "topic": "/Calaza2/Rx",
+        "qos": "",
+        "retain": "",
+        "broker": "a2e9da3e.eada78",
+        "x": 840,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "5a324589.d9c06c",
+        "type": "csv",
+        "z": "c7b6724c.73857",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 290,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3a6ea481.bd322c",
+        "type": "function",
+        "z": "c7b6724c.73857",
+        "name": "22",
+        "func": "msg.payload = \"2\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 670,
+        "y": 260,
+        "wires": [
+            [
+                "d5815805.7b2bb8"
+            ]
+        ]
+    },
+    {
+        "id": "357ab5d9.564aba",
+        "type": "function",
+        "z": "c7b6724c.73857",
+        "name": "21",
+        "func": "msg.payload = \"1\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 670,
+        "y": 220,
+        "wires": [
+            [
+                "d5815805.7b2bb8"
+            ]
+        ]
+    },
+    {
+        "id": "89295e47.59cda",
+        "type": "function",
+        "z": "c7b6724c.73857",
+        "name": "22",
+        "func": "msg.payload = \"2\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 670,
+        "y": 120,
+        "wires": [
+            [
+                "72a2e267.af09cc"
+            ]
+        ]
+    },
+    {
+        "id": "3a9d8e87.d02952",
+        "type": "function",
+        "z": "c7b6724c.73857",
+        "name": "21",
+        "func": "msg.payload = \"1\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 670,
+        "y": 80,
+        "wires": [
+            [
+                "72a2e267.af09cc"
+            ]
+        ]
+    },
+    {
+        "id": "3f9b5c64.ba0b54",
+        "type": "function",
+        "z": "c7b6724c.73857",
+        "name": "status 1",
+        "func": "if(msg.payload == \"Ambulancia ja passou\")\n    msg.payload = \"Ambulancia ja passou por aqui ESP-01\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 240,
+        "y": 300,
+        "wires": [
+            [
+                "440b7d03.916d54"
+            ]
+        ]
+    },
+    {
+        "id": "440b7d03.916d54",
+        "type": "debug",
+        "z": "c7b6724c.73857",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 460,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "eb3c734e.faf0d",
+        "type": "function",
+        "z": "c7b6724c.73857",
+        "name": "status 2",
+        "func": "if(msg.payload == \"Ambulancia ja passou\")\n    msg.payload = \"Ambulancia ja passou por aqui ESP-02\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 240,
+        "y": 360,
+        "wires": [
+            [
+                "440b7d03.916d54"
+            ]
+        ]
+    },
+    {
+        "id": "e1b03375.31fe8",
+        "type": "mqtt out",
+        "z": "c7b6724c.73857",
+        "name": "ESP-03",
+        "topic": "/Calaza3/Rx",
+        "qos": "",
+        "retain": "",
+        "broker": "a2e9da3e.eada78",
+        "x": 840,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "157705bc.b882fa",
+        "type": "function",
+        "z": "c7b6724c.73857",
+        "name": "32",
+        "func": "msg.payload = \"2\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 670,
+        "y": 400,
+        "wires": [
+            [
+                "e1b03375.31fe8"
+            ]
+        ]
+    },
+    {
+        "id": "d2c8ac4c.4cf91",
+        "type": "function",
+        "z": "c7b6724c.73857",
+        "name": "31",
+        "func": "msg.payload = \"1\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 670,
+        "y": 360,
+        "wires": [
+            [
+                "e1b03375.31fe8"
+            ]
+        ]
+    },
+    {
+        "id": "9743700b.7da54",
+        "type": "mqtt in",
+        "z": "c7b6724c.73857",
+        "name": "ESP-03",
+        "topic": "/Calaza3/Tx",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "a2e9da3e.eada78",
+        "x": 70,
+        "y": 520,
+        "wires": [
+            [
+                "5d4a0ec0.4fff7",
+                "1c694184.80e3ee"
+            ]
+        ]
+    },
+    {
+        "id": "5d4a0ec0.4fff7",
+        "type": "function",
+        "z": "c7b6724c.73857",
+        "name": "status 3",
+        "func": "if(msg.payload == \"Ambulancia ja passou\")\n    msg.payload = \"Ambulancia ja passou por aqui ESP-03\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 240,
+        "y": 520,
+        "wires": [
+            [
+                "440b7d03.916d54"
+            ]
+        ]
+    },
+    {
+        "id": "16d9a349.25877d",
+        "type": "switch",
+        "z": "c7b6724c.73857",
+        "name": "controle 02",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "else"
+            },
+            {
+                "t": "cont",
+                "v": "ESP-02-esquerda",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "ESP-02-direita",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": true,
+        "outputs": 3,
+        "x": 450,
+        "y": 220,
+        "wires": [
+            [
+                "5046680f.121f28"
+            ],
+            [
+                "357ab5d9.564aba"
+            ],
+            [
+                "3a6ea481.bd322c"
+            ]
+        ]
+    },
+    {
+        "id": "7ee002ab.3d660c",
+        "type": "function",
+        "z": "c7b6724c.73857",
+        "name": "20",
+        "func": "msg.payload = \"0\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 670,
+        "y": 40,
+        "wires": [
+            [
+                "72a2e267.af09cc"
+            ]
+        ]
+    },
+    {
+        "id": "5046680f.121f28",
+        "type": "function",
+        "z": "c7b6724c.73857",
+        "name": "20",
+        "func": "msg.payload = \"0\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 670,
+        "y": 180,
+        "wires": [
+            [
+                "d5815805.7b2bb8"
+            ]
+        ]
+    },
+    {
+        "id": "c005b479.400348",
+        "type": "function",
+        "z": "c7b6724c.73857",
+        "name": "30",
+        "func": "msg.payload = \"0\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 670,
+        "y": 320,
+        "wires": [
+            [
+                "e1b03375.31fe8"
+            ]
+        ]
+    },
+    {
+        "id": "f74787f6.7a09b8",
+        "type": "switch",
+        "z": "c7b6724c.73857",
+        "name": "controle 03",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "else"
+            },
+            {
+                "t": "cont",
+                "v": "ESP-03-esquerda",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "ESP-03-direita",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": true,
+        "outputs": 3,
+        "x": 470,
+        "y": 360,
+        "wires": [
+            [
+                "c005b479.400348"
+            ],
+            [
+                "d2c8ac4c.4cf91"
+            ],
+            [
+                "157705bc.b882fa"
+            ]
+        ]
+    },
+    {
+        "id": "a2e9da3e.eada78",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    }
+]
