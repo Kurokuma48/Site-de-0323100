@@ -17,7 +17,7 @@ const long interval = 5000; //1 hora = 3600000
 const long interval2 = 2000; //5 minutos = 300000
 bool c = false; // c stands for "eh plausivel passar ambulancia agora?"
 int g, y, r;
-int led = 2, button = 23,
+int led = 2, button = 33,
     green1 = 14, yellow1 = 12, red1 = 13,
     green2 = 25, yellow2 = 26, red2 = 27;
 //-------------------------------------------------------------------------------------------------------------------------
