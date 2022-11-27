@@ -3,7 +3,7 @@
 <html>
     <head>
         <!--Aqui criamos um link para o documento que contém os estilos da página-->
-        <link rel="stylesheet" type="text/css" href="./estilos/estilos.css">
+        <link rel="stylesheet" type="text/css" href="./estilos/estilos_organizados.css">
         <link rel="icon" type="image/x-icon" href="./Imagens/thumbnail_ABREALAS LOGO.png">
         <!--Com essa tag meta o navegador entende que os caracteres são do UTF-8 e os acentos n bugam-->
         <meta charset="UTF-8">
@@ -11,16 +11,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Abre Alas</title>
     </head>
-    <body>
-        <div class="titulo">
-            <img class="logo-resto" src="./Imagens/thumbnail_ABREALAS LOGO.png" alt="Logo do Abre Alas">
-            <h1 class="area-paciente">Área do paciente</h1>
-        </div>
+    <body class="rosa">
+        <header>
+            <div class="logo_div">
+                <img class="logo" src="./Imagens/thumbnail_ABREALAS LOGO.png" alt="Logo do Abre Alas">
+            </div>
+            <div class="titulo">
+                <div id="centralizador">Área do paciente</div>
+            </div>
+        </header>
+        <div id="envoltorio-area-paciente">
             <div id="mapa">
                 Forneça o endereço ou <br> 
                 utilize a opção "Localização atual"
             </div>
-            <div id="bigForm">
+            <div id="envoltorio-formulario">
                 <form id="formulario">
                     Informações importantes para<br>
                     ajudarmos:<br>
@@ -34,7 +39,8 @@
                     <br>
                 </form>
                 <button id="submiter" onclick="document.location='Area-de-espera.html'" target="_self">REALIZAR CHAMADA</button>
-            </div>        
+            </div>  
+        </div>      
         <footer>
             www.abrealas.com.br
         </footer>

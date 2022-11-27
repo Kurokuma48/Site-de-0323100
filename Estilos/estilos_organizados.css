@@ -1,0 +1,122 @@
+/*Definição de variáveis*/
+:root{
+    --rosa: #e26868;
+    --azul: #7292c1;
+}
+
+/*******************************************************************/
+/*Garante que nenhum objeto terá margem e padding por padrão*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+/********************************************************/
+/*body cobre toda a área da tela, me permite escrever os tamanhos das coisas com relação ao body*/
+body{
+    width: 100vw;
+    height: 100vh;
+
+    font-family: AndrewAndreas, Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+/**************************************************/
+/*Cores de background*/
+.rosa{
+    background-color: var(--rosa);
+}
+
+.azul{
+    background-color: var(--azul);
+}
+
+.grad{
+    background-image: linear-gradient(to right, #e26868 , #7392c1);
+}
+
+/************************************************/
+/*Arrumando o título principal de todas as páginas*/
+header{
+    display: block;
+    width: 100%;
+    height: 15%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header .logo_div{
+    width: 20%;
+    height: 100%;
+
+    overflow: hidden;
+
+    float: left;
+}
+header .logo{
+    width: 90%;
+}
+
+header .titulo{
+    width: 60%;
+    height: 100%;
+    box-sizing: border-box;
+    margin-right: 20%;
+
+    float: left;
+
+    text-align: center;
+    font-size: 30px;
+    font-weight: 520;
+}
+#centralizador{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/***********************************************/
+/*Arrumando o footer de todas as páginas*/
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5%;
+
+    text-align: center;
+    font-size: 10px;
+}
+
+/************************************************************/
+/*Arrumando a área do paciente*/
+
+#envoltorio-area-paciente{
+    width: 80%;
+    height: 80%;
+
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    margin: auto;
+}
+
+#mapa{
+    margin-top: 5%;
+    width: 40%;
+    float: left;
+}
+
+#envoltorio-formulario{
+    margin-top: 5%;
+    width: 50%;
+    float: right;
+}
+
+
+
