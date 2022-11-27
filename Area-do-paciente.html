@@ -20,8 +20,8 @@
                 <div id="centralizador">Área do paciente</div>
             </div>
         </header>
-        <div id="envoltorio-area-paciente">
-            <div id="mapa">
+        <div id="envoltorio-area">
+            <div id="left">
                 Forneça o endereço ou <br> 
                 utilize a opção "Localização atual"
             </div>
@@ -30,9 +30,9 @@
                     Informações importantes para<br>
                     ajudarmos:<br>
                     <div id="os3-primeiros">
-                        <input type="text" class="inputs" name="telefone" placeholder="Telefone para contato: (xx) xxxxx-xxxx"><br>
-                        <input type="text" class="inputs" name="CPF" placeholder="CPF do paciente: xxx.xxx.xxx-xx"><br> 
-                        <input type="text" class="inputs" name="nome" placeholder="Nome do paciente: Fulano de Tal"><br>
+                        <input type="text" autocomplete="off" class="inputs" name="telefone" placeholder="Telefone para contato: (xx) xxxxx-xxxx"><br>
+                        <input type="text" class="inputs" autocomplete="off" name="CPF" placeholder="CPF do paciente: xxx.xxx.xxx-xx"><br> 
+                        <input type="text" class="inputs" autocomplete="off" name="nome" placeholder="Nome do paciente: Fulano de Tal"><br>
                     </div>
                     <label for="ocorrencia">Informe o tipo da ocorrência:</label><br>
                     <textarea type="text" id="ocorrencia" name="ocorrencia" placeholder="Meu irmão desmaiou após comer um camarão, está todo vermelho mas ainda respira"></textarea>
@@ -41,7 +41,7 @@
                 <button id="submiter" onclick="document.location='Area-de-espera.html'" target="_self">REALIZAR CHAMADA</button>
             </div>  
         </div>      
-        <footer>
+        <footer class="rosa">
             www.abrealas.com.br
         </footer>
     </body>
