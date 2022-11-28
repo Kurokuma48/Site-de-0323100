@@ -4,31 +4,351 @@
 <html>
     <head>
         <!--Aqui criamos um link para o documento que contém os estilos da página-->
-	<link rel="stylesheet" type="text/css" href="{% static 'Estilos/estilos.css'%}">
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'Estilos/estilos.css'%}"> -->
 	<link rel="icon" type="image/x-icon" href="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}">
         <!--Com essa tag meta o navegador entende que os caracteres são do UTF-8 e os acentos n bugam-->
         <meta charset="UTF-8">
         <!--Aqui o site funciona direito em celular tbm-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Abre Alas</title>
+        <style>
+            /*Definição de variáveis*/
+:root{
+    --rosa: #e26868;
+    --azul: #7292c1;
+}
+
+/*******************************************************************/
+/*Garante que nenhum objeto terá margem e padding por padrão*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+/********************************************************/
+/*Arruma as cores e fontes do body*/
+body{
+    font-family: AndrewAndreas, Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+/**************************************************/
+/*Cores de background*/
+.rosa{
+    background-color: var(--rosa);
+}
+
+.azul{
+    background-color: var(--azul);
+}
+
+.grad{
+    background-image: linear-gradient(to right, #e26868 , #7392c1);
+}
+
+/************************************************/
+/*Arrumando o título principal de todas as páginas*/
+header{
+    display: block;
+    width: 100%;
+    height: 100px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header .logo_div{
+    width: 20%;
+    height: 100%;
+
+    float: left;
+}
+header .logo{
+    height: 100%;
+}
+
+header .titulo{
+    width: 60%;
+    height: 100%;
+    box-sizing: border-box;
+    margin-right: 20%;
+
+    float: left;
+
+    text-align: center;
+    font-size: 30px;
+    font-weight: 520;
+}
+#centralizador{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/***********************************************/
+/*Arrumando o footer de todas as páginas*/
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 20px;
+
+    text-align: center;
+    font-size: 15px;
+
+}
+
+/*Arrumando o menu inicial*/
+
+#logo-caixa{
+    margin-top: 50px !important;
+    margin-bottom: 100px !important;
+    width: 500px;
+    margin: auto;
+}
+#logo{
+    width: 500px;
+}
+
+#intro{
+    width: 700px;
+    margin: auto;
+}
+#intro button{
+    width: 250px;
+    height: 100px;
+
+    background-color: white;
+    color: var(--rosa);
+    font-size: 25px;
+
+    outline: none;
+    border-radius: 20px;
+    border-style: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#intro button:hover{
+    font-size: 30px;
+}
+
+#botao-paciente{
+    float: left;
+    margin-top: 50px;
+}
+
+#botao-profissional{
+    float: right;
+    margin-top: 50px;
+}
+
+/************************************************************/
+/*Arrumando a área do paciente*/
+
+#envoltorio-area{
+    width: 80%;
+    height: 700px;
+
+    margin-top: 100px;
+    margin-left: 10%;
+}
+
+#left{
+    margin-top: 5%;
+    width: 40%;
+    float: left;
+
+    font-size: 25px;
+}
+
+#envoltorio-formulario{
+    margin-top: 5%;
+    width: 50%;
+    float: right;
+}
+
+#formulario{
+    float: left;
+    text-align: center;
+    font-size: 25px;
+}
+
+#formulario input{
+    width: 400px;
+    height: 70px;
+
+    background-color: white;
+    color: gray;
+
+    border-radius: 20px;
+    border-style: none;
+    padding: 10px;
+    margin: 10px;
+    transition: 0.2s;
+}
+
+#formulario input:focus{
+    box-shadow: 0px 0px 5px 5px lightblue;
+    outline: none;
+}
+
+#formulario textarea{
+    width: 400px;
+    height: 200px;
+
+    color: gray;
+
+    border-radius: 20px;
+    border-style: none;
+    padding: 10px;
+    resize: none;
+    margin: 10px;
+    transition: 0.2s;
+}
+
+#formulario textarea:focus{
+    outline: none;
+    box-shadow: 0px 0px 5px 5px lightblue;
+}
+
+#submiter{
+    width: 395px;
+    height: 100px;
+
+    background-color: red;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: gray;
+    outline: none;
+    box-shadow: none;
+    margin: 10px;
+    margin-bottom: 30px !important;
+    padding: 10px;
+
+    color: lightgray;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 550;
+    transition: 0.5s;
+}
+
+#submiter:hover{
+    font-size: 35px;
+}
+
+/***********************************************************************/
+/*Arrumando a area de espera*/
+
+#loading{
+    animation: giro 1s infinite linear;
+    width: 200px;
+}
+
+@keyframes giro {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(359deg);
+    }
+}
+
+#espera-centro{
+    margin-top: 120px !important;
+    width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+#bigForm{
+    width: 700px;
+    height: 300px;
+}
+#bigForm #formulario{
+    float: none;
+    width: 440px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+/*********************************************************************/
+/*Corrigindo a área de acompanhamento*/
+
+#p-acompanhamento{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+}
+
+/*********************************************/
+/*Arrumando a área de login*/
+
+#ou{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+#login{
+    float: right;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 5%;
+}
+
+#login input{
+    width: 400px;
+    height: 70px;
+
+    background-color: white;
+    color: gray;
+
+    border-radius: 20px;
+    border-style: none;
+    padding: 10px;
+    margin: 10px;
+    transition: 0.2s;
+}
+
+#login input:focus{
+    box-shadow: 0px 0px 5px 5px lightblue;
+    outline: none;
+}
+        </style>
     </head>
-    <body>
-        <div class="titulo">
-		<a href="{% url 'index.html'%}">
-			<img class="logo-resto" src="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}" alt="Logo do Abre Alas">
-		</a>
-		<h1 class="area-paciente">Área do paciente</h1>
-        </div>
-        <p>
+    <body class="rosa">
+		<header>
+            <div class="logo_div">
+                <a href={% url 'index.html' %}><img class="logo" src="{% static 'Imagens/thumbnail_ABREALAS_LOGO.png' %}" alt="Logo do Abre Alas"></a>
+            </div>
+            <div class="titulo">
+                <div id="centralizador">Área do paciente</div>
+            </div>
+        </header>
+        <div id="espera-centro">
             Obrigado! Em poucos instantes nossa equipe analisará<br>
             a gravidade da ocorrência e conectará a rota de uma<br>
-            ambulância em direção à sua localização!
-        </p>
-        <p>
+            ambulância em direção à sua localização!<br><br>
+
             Não se preocupe, nosso sistema auxilia a chegada das<br>
             ambulâncias abrindo todos os semáforos no caminho!
-        </p>
-	<img id="loading" src="{% static 'Imagens/Preloader-Gif/Loading.gif' %}" alt="Gif de carregamento">
+            <div id="bigForm">
+                <form id="formulario">
+                    <textarea type="text" id="comentadicional" autocomplete="off" name="comentadicional" placeholder="Faça um comentário adicional enquanto aguarda"></textarea>
+                </form>
+            </div>
+            <img id="loading" src="{% static 'Imagens/Loading.png' %}" alt="Gif de carregamento">
+        </div>
         <footer>
             www.abrealas.com.br
         </footer>

@@ -1,161 +1,312 @@
+/*Definição de variáveis*/
+:root{
+    --rosa: #e26868;
+    --azul: #7292c1;
+}
+
+/*******************************************************************/
+/*Garante que nenhum objeto terá margem e padding por padrão*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+/********************************************************/
+/*Arruma as cores e fontes do body*/
 body{
-    font-family: 'Noto Sans', sans-serif;
-    background-color: #e26868;
+    font-family: AndrewAndreas, Verdana, Geneva, Tahoma, sans-serif;
     color: white;
-    font-size: 100%;
+}
+
+/**************************************************/
+/*Cores de background*/
+.rosa{
+    background-color: var(--rosa);
+}
+
+.azul{
+    background-color: var(--azul);
+}
+
+.grad{
+    background-image: linear-gradient(to right, #e26868 , #7392c1);
+}
+
+/************************************************/
+/*Arrumando o título principal de todas as páginas*/
+header{
+    display: block;
+    width: 100%;
+    height: 100px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header .logo_div{
+    width: 20%;
     height: 100%;
-    margin: 0px;
-    padding: 0px;
-}
 
-h1{
-    color: white;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-top: 0px;
-    margin-bottom: 50px;
-}
-
-p{
-    color: white;
-    text-align: center;
-    font-size: 2em;
-}
-
-#logo{
-    width: 40%;
-    height: 20%;
-    margin-left: 30%;
-}
-
-.logo-resto{
-    width: 10%;
-}
-
-#botoes{
-    text-align: center;
-    border-style: none;
-    height: 83px;
-}
-
-.botao{
-    background-color: white;
-    border-radius: 10px;
-    height: 83px;
-    width: 200px;
-    margin-left: 120px;
-    margin-right: 120px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: #e26868;
-    border-style: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.5em;
-}
-
-.botao:hover{
-    background-color: white;
-    border-radius: 10px;
-    height: 83px;
-    width: 200px;
-    margin-left: 120px;
-    margin-right: 120px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: #e26868;
-    border-style: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.5em;
-    cursor: pointer;
-}
-
-#mapa{
     float: left;
-    margin-left: 20%;
+}
+header .logo{
+    height: 100%;
+}
+
+header .titulo{
+    width: 60%;
+    height: 100%;
+    box-sizing: border-box;
+    margin-right: 20%;
+
+    float: left;
+
     text-align: center;
-    font-size: 1.5em;
+    font-size: 30px;
+    font-weight: 520;
+}
+#centralizador{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/***********************************************/
+/*Arrumando o footer de todas as páginas*/
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 20px;
+
+    text-align: center;
+    font-size: 15px;
+
+}
+
+/*Arrumando o menu inicial*/
+
+#logo-caixa{
+    margin-top: 50px !important;
+    margin-bottom: 100px !important;
+    width: 500px;
+    margin: auto;
+}
+#logo{
+    width: 500px;
+}
+
+#intro{
+    width: 700px;
+    margin: auto;
+}
+#intro button{
+    width: 250px;
+    height: 100px;
+
+    background-color: white;
+    color: var(--rosa);
+    font-size: 25px;
+
+    outline: none;
+    border-radius: 20px;
+    border-style: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#intro button:hover{
+    font-size: 30px;
+}
+
+#botao-paciente{
+    float: left;
+    margin-top: 50px;
+}
+
+#botao-profissional{
+    float: right;
+    margin-top: 50px;
+}
+
+/************************************************************/
+/*Arrumando a área do paciente*/
+
+#envoltorio-area{
+    width: 80%;
+    height: 700px;
+
+    margin-top: 100px;
+    margin-left: 10%;
+}
+
+#left{
+    margin-top: 5%;
+    width: 40%;
+    float: left;
+
+    font-size: 25px;
+}
+
+#envoltorio-formulario{
+    margin-top: 5%;
+    width: 50%;
+    float: right;
 }
 
 #formulario{
-    float: right;
-    margin-right: 20%;
+    float: left;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 25px;
 }
 
-.inputs{
+#formulario input{
     width: 400px;
-    height: 40px;
+    height: 70px;
+
+    background-color: white;
+    color: gray;
+
+    border-radius: 20px;
     border-style: none;
-    border-radius: 10px;
-    margin-top: 20px;
-    margin-bottom: 0px;
     padding: 10px;
+    margin: 10px;
+    transition: 0.2s;
 }
 
-.area-paciente{
-    width: 58%;
-    text-align: left;
-    margin: 0px;
-    margin-top: 50px;
-    float: right;
+#formulario input:focus{
+    box-shadow: 0px 0px 5px 5px lightblue;
+    outline: none;
 }
 
-.titulo{
-    margin-bottom: 50px;
-}
-
-#os3-primeiros{
-    margin-bottom: 40px;
-}
-
-#ocorrencia{
+#formulario textarea{
     width: 400px;
-    height: 100px;
+    height: 200px;
+
+    color: gray;
+
+    border-radius: 20px;
     border-style: none;
-    border-radius: 10px;
-    margin-top: 20px;
     padding: 10px;
-    margin-bottom: 40px;
+    resize: none;
+    margin: 10px;
+    transition: 0.2s;
+}
+
+#formulario textarea:focus{
+    outline: none;
+    box-shadow: 0px 0px 5px 5px lightblue;
 }
 
 #submiter{
-    width: 410px;
+    width: 395px;
     height: 100px;
-    border-style: solid;
-    border-width: 5px;
-    border-color: white;
-    border-radius: 10px;
+
     background-color: red;
-    color: white;
-    text-align: center;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: gray;
+    outline: none;
+    box-shadow: none;
+    margin: 10px;
+    margin-bottom: 30px !important;
     padding: 10px;
-    font-size: 1.5em;
-    float: right;
-    margin-right: 20%;
-    text-align: center;
-    margin-left: 50%;
+
+    color: lightgray;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 550;
+    transition: 0.5s;
 }
 
 #submiter:hover{
-    cursor: pointer;
-    font-size: 1.55em;
+    font-size: 35px;
 }
 
-footer{
-    position: absolute;
-    bottom: 10px;
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: 0px;
-    color: white;
-    width: 100%;
-}
+/***********************************************************************/
+/*Arrumando a area de espera*/
 
 #loading{
-    width: 5%;
-    margin-left: 47.5%;
+    animation: giro 1s infinite linear;
+    width: 200px;
+}
+
+@keyframes giro {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(359deg);
+    }
+}
+
+#espera-centro{
+    margin-top: 120px !important;
+    width: 700px;
+    margin: auto;
     text-align: center;
-    background-color: none;
-    margin-top: 100px;
+}
+
+#bigForm{
+    width: 700px;
+    height: 300px;
+}
+#bigForm #formulario{
+    float: none;
+    width: 440px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+/*********************************************************************/
+/*Corrigindo a área de acompanhamento*/
+
+#p-acompanhamento{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+}
+
+/*********************************************/
+/*Arrumando a área de login*/
+
+#ou{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+#login{
+    float: right;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 5%;
+}
+
+#login input{
+    width: 400px;
+    height: 70px;
+
+    background-color: white;
+    color: gray;
+
+    border-radius: 20px;
+    border-style: none;
+    padding: 10px;
+    margin: 10px;
+    transition: 0.2s;
+}
+
+#login input:focus{
+    box-shadow: 0px 0px 5px 5px lightblue;
+    outline: none;
 }
