@@ -1,8 +1,8 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
-//Cuidado viu rapeize, eh a senha do WiFi daqui de casa e do meu roteador pessoal/celular
-const char* ssid = "Moto One Vision"; //AshesToAshes
-const char* password = "VanessaPerfeita"; //Vidval118
+
+const char* ssid = "NomeDaRede";
+const char* password = "SenhaDaRede";
 const char* mqtt_server = "broker.mqttdashboard.com";
 #define mqtt_port         1883
 #define MQTT_USER         ""
